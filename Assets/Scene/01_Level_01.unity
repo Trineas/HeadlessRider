@@ -1039,6 +1039,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2654488402540796104, guid: 18a8bc1e155a08d45a8e79adf27a7aab,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 75.41513
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654488402540796104, guid: 18a8bc1e155a08d45a8e79adf27a7aab,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 77.51127
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654488402540796104, guid: 18a8bc1e155a08d45a8e79adf27a7aab,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 309.8352
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654488402540796104, guid: 18a8bc1e155a08d45a8e79adf27a7aab,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 2654488402540796104, guid: 18a8bc1e155a08d45a8e79adf27a7aab,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.41
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18a8bc1e155a08d45a8e79adf27a7aab, type: 3}
 --- !u!1001 &5056563646260620412
