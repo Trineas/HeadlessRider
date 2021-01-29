@@ -11,7 +11,7 @@ public class MapController : MonoBehaviour
     private List<GameObject> mapAssets = new List<GameObject>();
     private float spawnTimer = 0f;
     private float destroyTimer = 0f;
-    private Vector3 nextSpawn = Vector3.zero;
+    private Vector3 nextSpawn;
 
     // Spawn a map Asset
     void SpawnAsset()
@@ -34,19 +34,24 @@ public class MapController : MonoBehaviour
         spawnDelay = p_Controller.ScrollSpeed * 3f;
         destroyDelay = p_Controller.ScrollSpeed * 10f;
 
+        // find track at the very front to find next spawn point
+        Vector3 minSpawn = Vector3.zero;
+
         foreach (Transform child in transform)
         {
-            if(nextSpawn.z > child.position.z)
+
+            if(minSpawn.z > child.position.z)
             {
-                nextSpawn = child.position;
+                minSpawn = child.position;
 
                 Renderer mapBound = child.GetComponent<Renderer>();
-                nextSpawn -= Vector3.forward * (mapBound.bounds.extents.z *2f);
+                nextSpawn = minSpawn - Vector3.forward * (mapBound.bounds.extents.z * 2f);
             }
             mapAssets.Add(child.gameObject);
         }
         
-        
+
+
     }
 
     // Update is called once per frame
