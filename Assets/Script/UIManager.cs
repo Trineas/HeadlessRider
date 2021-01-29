@@ -52,7 +52,6 @@ public class UIManager : MonoBehaviour
 
         Debug.DrawLine(rider.transform.position, head.transform.position, Color.red);
         distanceBetweenObjects = Vector3.Distance(rider.transform.position, head.transform.position);
-
         distanceSlider.value = distanceBetweenObjects;
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
