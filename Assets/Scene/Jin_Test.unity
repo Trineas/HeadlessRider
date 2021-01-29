@@ -848,6 +848,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverWall
       objectReference: {fileID: 0}
+    - target: {fileID: 5139050048138585345, guid: 531cb865461e81544a49f768074cd198,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5139050048138585597, guid: 531cb865461e81544a49f768074cd198,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1060,6 +1065,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980150404066841986, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980150404066841996, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: InvulnerabilityTime
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8980150404066841996, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: RecoverTime
+      value: 1.246
       objectReference: {fileID: 0}
     - target: {fileID: 8980150404814353342, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}

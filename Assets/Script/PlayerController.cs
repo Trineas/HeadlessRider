@@ -9,21 +9,42 @@ public class PlayerController : MonoBehaviour
     public float DampingSpeed;
     public float JumpPower;
     [Range(0, 1)] public float Gravity;
+    [Range(0.8f, 2f)] public float RecoverTime;
 
     private float ScrollSpeed;
 
     private Vector3 forwardDir;
     private Vector3 rightDir;
     private Vector3 movement;
+    private Vector3 knockbackDir;
 
     private float distToGround;
 
     private float ForwardSpeed;
     private float VerticalSpeed;
 
+    private bool isHit = false;
+    private bool isVulnerable = true;
+    private float vulTimer = 0f;
+
     bool IsGrounded()
     {
         return Physics.Raycast(transform.position, Vector3.down, distToGround + 0.1f);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "DeathTrigger")
+        {
+
+        }
+
+        if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
+        {
+            isHit = true;
+            isVulnerable = false;
+            knockbackDir = collision.contacts[0].normal;
+        }
     }
 
     // Start is called before the first frame update
@@ -60,7 +81,26 @@ public class PlayerController : MonoBehaviour
 
     void Forward()
     {
-        ForwardSpeed = SideSpeed;
+        if (isHit)
+        {
+            ForwardSpeed = 0f;
+            StartCoroutine(Blink());
+            Physics.IgnoreLayerCollision(9, 8);
+            transform.position += knockbackDir * 4f * Time.deltaTime;
+            vulTimer += Time.deltaTime;
+            if(vulTimer >= RecoverTime)
+            {
+                Physics.IgnoreLayerCollision(9, 8, false);
+                isHit = false;
+                isVulnerable = true;
+                vulTimer = 0f;
+            }
+
+        }
+        else
+        {
+            ForwardSpeed = SideSpeed;
+        }
     }
 
     protected void Vertical()
@@ -95,12 +135,21 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * DampingSpeed);
         }
     }
-
     
 
     void UpdateMovement()
     {
         transform.position += ForwardSpeed * movement * Time.deltaTime;
         transform.position += VerticalSpeed * Vector3.up * Time.deltaTime;
+    }
+
+    IEnumerator Blink()
+    {
+        print("Blinking");
+        Renderer thisRend = this.GetComponent<Renderer>();
+        thisRend.enabled = false;
+
+        yield return new WaitForSeconds(0.1f);
+        thisRend.enabled = true;
     }
 }

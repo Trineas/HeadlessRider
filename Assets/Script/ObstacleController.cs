@@ -12,13 +12,11 @@ public class ObstacleController : MonoBehaviour
     private enum obstType { Jumping, Rolling, Lying };
     private Renderer currentTrack;
 
-    
-
-
     [SerializeField] obstType ObstacleType = obstType.Jumping;
 
     private void OnCollisionEnter(Collision collision)
     {
+
         if(collision.gameObject.tag == "DeathTrigger")
         {
             StartCoroutine(DestoryYourself());
@@ -28,6 +26,13 @@ public class ObstacleController : MonoBehaviour
         {
             JumpPower = BouncePower;
         }
+
+        if (ObstacleType == obstType.Rolling && collision.gameObject.tag == "RunTrack")
+        {
+            JumpPower = BouncePower/2f;
+            ScrollSpeed += 8f;
+        }
+
     }
 
     // Start is called before the first frame update
@@ -38,13 +43,18 @@ public class ObstacleController : MonoBehaviour
         //decide Spawn point
         transform.position = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
 
+        if(ObstacleType == obstType.Rolling)
+        {
+            transform.position -= Vector3.up * 3f;
+        }
+
         RaycastHit trackLoc;
         if (Physics.Raycast(transform.position, Vector3.down, out trackLoc, transform.position.y + 20f))
         {
             currentTrack = trackLoc.transform.GetComponent<Renderer>();
         }
 
-        float offsetSide = currentTrack.bounds.extents.x - 4f;
+        float offsetSide = currentTrack.bounds.extents.x - 3f;
         float VertPos = Random.Range(-offsetSide, offsetSide);
         transform.position += Vector3.right * VertPos;
 

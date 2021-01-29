@@ -12,13 +12,15 @@ public class GameplayManager : MonoBehaviour
     private float obstacleLTimer = 0f;
     private float obstacleJRTimer = 0f;
 
-    private float obstacleLDelay = 3f;
-    private float obstacleJRDelay = 8f;
+    private double obstacleLDelay = 3.0;
+    private double obstacleJRDelay = 8.0;
 
     private List<GameObject> obstaclesL = new List<GameObject>();
     private List<GameObject> obstaclesJR = new List<GameObject>();
 
     private GameObject DarkWall;
+
+    public static GameplayManager Instance { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
@@ -40,6 +42,8 @@ public class GameplayManager : MonoBehaviour
                 obstaclesJR.Add(obst);
             }
         }
+
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -54,14 +58,14 @@ public class GameplayManager : MonoBehaviour
         {
             SpawnObstacle("L");
             obstacleLTimer = 0f;
-            obstacleLDelay = 1.5f;
+            obstacleLDelay = Random.Range(8, 15)/10f;
         }
 
         if (obstacleJRTimer >= obstacleJRDelay)
         {
             SpawnObstacle("JR");
             obstacleJRTimer = 0f;
-            obstacleJRDelay = 2f;
+            obstacleJRDelay = Random.Range(delayMin, delayMax);
         }
     }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8980150404066841987}
   - component: {fileID: 8980150404066841999}
   - component: {fileID: 8980150404066841996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: PlayerDummy
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 8980150404814353336}
   - component: {fileID: 8980150404814353337}
   - component: {fileID: 8980150404814353342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DirectionPointer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
