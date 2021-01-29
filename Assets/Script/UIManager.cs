@@ -14,12 +14,9 @@ public class UIManager : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack;
     public GameObject pauseScreen;
     public GameObject pauseFirstButton;
-
-    //public Image mask, fill;
     public float distanceBetweenObjects;
-    //public float maxDistance, minDistance, curDistance;
-    public GameObject obj1, obj2;
     public GameObject rider, head;
+    public Slider distanceSlider;
 
     public string titleScreen;
 
@@ -53,12 +50,10 @@ public class UIManager : MonoBehaviour
             }
         }
 
-        //GetCurrentDistanceToHead();
-        Debug.DrawLine(obj1.transform.position, obj2.transform.position, Color.green);
-        distanceBetweenObjects = Vector3.Distance(obj1.transform.position, obj2.transform.position);
-        //curDistance = distanceBetweenObjects;
-        rider.transform.position = obj1.transform.position;
-        head.transform.position = obj2.transform.position;
+        Debug.DrawLine(rider.transform.position, head.transform.position, Color.red);
+        distanceBetweenObjects = Vector3.Distance(rider.transform.position, head.transform.position);
+
+        distanceSlider.value = distanceBetweenObjects;
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
@@ -94,12 +89,4 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene(titleScreen);
         Time.timeScale = 1f;
     }
-
-    /*private void GetCurrentDistanceToHead()
-    {
-        float currentOffset = curDistance - minDistance;
-        float maximumOffset = maxDistance - minDistance;
-        float fillAmount = currentOffset / maximumOffset;
-        mask.fillAmount = fillAmount;
-    }*/
 }
