@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private Transform player;
+    private float scrollSpeed;
     private Vector3 offset;
 
     // Start is called before the first frame update
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        offset = transform.position - player.position;
+        scrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void FixedUpdate()
     {
-        transform.position = player.position + offset;
+        transform.position += -Vector3.forward * scrollSpeed;
     }
 }
