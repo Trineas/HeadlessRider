@@ -8,6 +8,9 @@ TagManager:
   - RunTrack
   - DeathTrigger
   - Boundary
+  - Lying Obstacle
+  - Jumping Obstacle
+  - Rolling Obstacle
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Obstacles
   - 
   - 
   - 
