@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cffebd7e13d5d8a4fbba9637d26e7238
+guid: 0c9285cb1d1715d4983e8e124d1f2252
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Henny Penny
+  fontName: A Charming Font Expanded
   fontNames:
-  - Henny Penny
+  - A Charming Font Expanded
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

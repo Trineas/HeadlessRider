@@ -489,21 +489,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2662288887864282529, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662288887864282529, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7573107778545145209, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8013713694063427664, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: m_Name
       value: UI Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8013713694063427665, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
-        type: 3}
-      propertyPath: obj1
-      value: 
-      objectReference: {fileID: 2119514283}
-    - target: {fileID: 8013713694063427665, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
-        type: 3}
-      propertyPath: obj2
-      value: 
-      objectReference: {fileID: 178671072}
     - target: {fileID: 8013713694063427669, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: m_Pivot.x
