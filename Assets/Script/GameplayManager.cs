@@ -20,6 +20,7 @@ public class GameplayManager : MonoBehaviour
 
     private GameObject DarkWall;
 
+
     public static GameplayManager Instance { get; private set; }
 
     // Start is called before the first frame update

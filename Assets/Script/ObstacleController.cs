@@ -40,6 +40,9 @@ public class ObstacleController : MonoBehaviour
     {
         ScrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
 
+        // make sure Obstacles do not collide with Environments
+        Physics.IgnoreLayerCollision(8, 11);
+
         //decide Spawn point
         transform.position = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
 

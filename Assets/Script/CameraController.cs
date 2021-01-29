@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private float scrollSpeed;
-    private Vector3 offset;
 
     // Start is called before the first frame update
     void Awake()
