@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SideSpeed: 12.67
   DampingSpeed: 5
-  JumpPower: 30
+  JumpPower: 15
   Gravity: 0.799
 --- !u!1 &8980150404814353340
 GameObject:
