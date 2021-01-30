@@ -19,6 +19,7 @@ public class ObstacleController : MonoBehaviour
 
         if(collision.gameObject.tag == "DeathTrigger")
         {
+            print("Turning off");
             StartCoroutine(DestoryYourself());
         }
 
@@ -40,15 +41,13 @@ public class ObstacleController : MonoBehaviour
     {
         ScrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
 
-        // make sure Obstacles do not collide with Environments
-        Physics.IgnoreLayerCollision(8, 11);
-
         //decide Spawn point
         transform.position = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
 
         if(ObstacleType == obstType.Rolling)
         {
             transform.position -= Vector3.up * 3f;
+            ScrollSpeed *= 20f;
         }
 
         RaycastHit trackLoc;
