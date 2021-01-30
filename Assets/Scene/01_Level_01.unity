@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16301820 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8980150404066841985, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 8980150404307937157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &103240337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1344575982875522496, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
@@ -173,7 +179,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rider
       value: 
-      objectReference: {fileID: 858941701}
+      objectReference: {fileID: 16301820}
     - target: {fileID: 8013713694063427669, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: m_Pivot.x
@@ -402,12 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4009c0064ab731a4b9c764c2c092772e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &858941701 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1344575984050831882, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1344575982978623313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &867330781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1144,6 +1144,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1034232036252431248, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Name
+      value: Player_Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457620625678685075, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8980150404066841984, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
       propertyPath: m_RootOrder
@@ -1204,5 +1214,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDummy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8980150404066841996, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: SideSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8980150404066841997, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}

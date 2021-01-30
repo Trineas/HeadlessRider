@@ -26,14 +26,6 @@ public class GameplayManager : MonoBehaviour
     private List<GameObject> obstaclesJR = new List<GameObject>();
 
     private GameObject DarkWall;
-    private GameObject InvisWall;
-
-    private bool playerHit;
-
-    private Vector3 DW_pos;
-
-    private float dwDelay = 2f;
-    private float dwTimer = 0f;
 
     public static GameplayManager Instance { get; private set; }
 
@@ -43,9 +35,6 @@ public class GameplayManager : MonoBehaviour
         ScrollSpeed = ScrollSpeed == 0 ? 0.3f : ScrollSpeed;
 
         DarkWall = GameObject.FindGameObjectWithTag("DeathTrigger");
-        DW_pos = DarkWall.transform.position;
-
-        InvisWall = GameObject.Find("BoundaryWall");
 
         delayMax = delayMin > delayMax ? delayMin + 1 : delayMax;
 
@@ -68,7 +57,7 @@ public class GameplayManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        MoveWalls();
+        DarkWall.transform.position -= Vector3.forward * ScrollSpeed;
 
         // spawn obstacles
         obstacleLTimer += Time.deltaTime;
@@ -91,40 +80,6 @@ public class GameplayManager : MonoBehaviour
 
     }
 
-    void MoveWalls()
-    {
-        Vector3 origPos = DarkWall.transform.position;
-        // make wall move along scroll
-        DarkWall.transform.position -= Vector3.forward * ScrollSpeed;
-
-        DW_pos -= Vector3.forward * ScrollSpeed;
-
-        // if player not hit, move wall slowly back
-        if (!playerHit && DarkWall.transform.position.z <= DW_pos.z)
-        {
-            DarkWall.transform.position += Vector3.forward * 2f * Time.deltaTime;
-        }
-
-        // if player is hit, move the dark wall towards player
-        if (playerHit) 
-        {
-            DarkWall.transform.position -= Vector3.forward * ApproachSpeed * Time.deltaTime;
-            dwTimer += Time.deltaTime;
-            if(dwTimer >= dwDelay)
-            {
-                playerHit = false;
-                dwTimer = 0f;
-            }
-        }
-
-        // invisible wall moves a bit faster (note: wall is already moves with camera)
-        Vector3 stopPoint = GameObject.Find("FinishPoint").transform.position;
-        if (InvisWall.transform.position.z >= stopPoint.z)
-        {
-            InvisWall.transform.position -= Vector3.forward * 0.3f * Time.deltaTime;
-        }
-    }
-
     void SpawnObstacle(string mode)
     {
         if(mode == "L")
@@ -142,11 +97,5 @@ public class GameplayManager : MonoBehaviour
             Instantiate(obstaclesJR[obstIdx], cameraPos - Vector3.down * 3f, Quaternion.Euler(angleRandom));
         }
         
-    }
-
-    // public method to be called by player when he gets hit
-    public void PlayerHit()
-    {
-        playerHit = true;
     }
 }

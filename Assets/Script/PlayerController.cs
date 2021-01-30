@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
         {
-            GameplayManager.Instance.PlayerHit();
             isHit = true;
             isVulnerable = false;
             knockbackDir = collision.contacts[0].normal;
@@ -72,7 +71,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {   
-        transform.position += -Vector3.forward * ScrollSpeed;
+        transform.position += -Vector3.forward * ScrollSpeed * 0.8f;
 
         forwardDir = Vector3.forward * Input.GetAxis("Vertical");
         rightDir  = Vector3.right * Input.GetAxis("Horizontal");
@@ -150,23 +149,33 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            // make player always look forward
+            Vector3 dest = Quaternion.LookRotation(Vector3.forward.normalized).eulerAngles;
+            Quaternion rotation = Quaternion.Euler(dest.y * Vector3.up);
 
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * DampingSpeed);
         }
     }
     
 
     void UpdateMovement()
     {
-        transform.position += ForwardSpeed/4f * movement * Time.deltaTime;
+        // Walking speed
+        transform.position += Vector3.right * ForwardSpeed * movement.x * Time.deltaTime;
+
+        // forward and backward movements are slowed
+        transform.position += Vector3.forward * ForwardSpeed/3f * movement.z * Time.deltaTime;
+
+        // Jump Height
         transform.position += VerticalSpeed * Vector3.up * Time.deltaTime;
     }
 
     IEnumerator Blink()
     {
-        Renderer thisRend = this.GetComponent<Renderer>();
-        thisRend.enabled = false;
+        Renderer bodyRend = GameObject.Find("Body").GetComponent<Renderer>();
+        bodyRend.enabled = false;
 
         yield return new WaitForSeconds(0.1f);
-        thisRend.enabled = true;
+        bodyRend.enabled = true;
     }
 }
