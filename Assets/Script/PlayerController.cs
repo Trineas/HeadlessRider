@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "DeathTrigger")
         {
-
+            Destroy(gameObject);
+            // things to do for game over transition
         }
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
@@ -45,6 +46,14 @@ public class PlayerController : MonoBehaviour
             isHit = true;
             isVulnerable = false;
             knockbackDir = collision.contacts[0].normal;
+        }
+
+        if(collision.gameObject.tag == "WinTrigger")
+        {
+            if (Input.GetKey(KeyCode.F))
+            {
+                print("YOU WIN");
+            }
         }
     }
 
