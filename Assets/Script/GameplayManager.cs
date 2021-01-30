@@ -138,7 +138,8 @@ public class GameplayManager : MonoBehaviour
         {
             Vector3 cameraPos = GameObject.FindGameObjectWithTag("MainCamera").transform.position;
             int obstIdx = Random.Range(0, obstaclesJR.Count);
-            Instantiate(obstaclesJR[obstIdx], cameraPos - Vector3.down * 3f, obstaclesJR[obstIdx].transform.rotation);
+            Vector3 angleRandom = new Vector3(Random.Range(-180f, 180f), Random.Range(-180f, 180f), Random.Range(-180f, 180f));
+            Instantiate(obstaclesJR[obstIdx], cameraPos - Vector3.down * 3f, Quaternion.Euler(angleRandom));
         }
         
     }

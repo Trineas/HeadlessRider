@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1366190859}
   m_Layer: 0
   m_Name: WagonBoundary
-  m_TagString: Environment
+  m_TagString: WinTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,14 +119,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366190857}
-  m_LocalRotation: {x: 0.65765786, y: 0, z: 0, w: 0.7533168}
-  m_LocalPosition: {x: 0, y: -0.8, z: 11}
-  m_LocalScale: {x: 6.6063, y: 0.99944997, z: 3.30074}
+  m_LocalRotation: {x: 1, y: 0.0000001872535, z: 0.0000001872535, w: 3.5063874e-14}
+  m_LocalPosition: {x: -0.007846153, y: -0.038774062, z: 0.13199432}
+  m_LocalScale: {x: 0.020327076, y: 0.0052610254, z: 0.17795323}
   m_Children:
   - {fileID: 2089316099}
-  m_Father: {fileID: 5056563645380046137}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 82.243, y: 0, z: 0}
+  m_Father: {fileID: 5018156402417790417}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 180, y: -0.000015258789, z: -0.000015258789}
 --- !u!33 &1366190861
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -353,13 +353,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3643295384747005641}
-  m_LocalRotation: {x: 0.701836, y: -0, z: -0, w: 0.7123386}
-  m_LocalPosition: {x: 0, y: 11.93404, z: -41.557457}
+  m_LocalRotation: {x: 0.656059, y: 0, z: 0, w: 0.75470966}
+  m_LocalPosition: {x: 0, y: 0.35, z: -6.27}
   m_LocalScale: {x: 1, y: 0.99944997, z: 0.97058}
   m_Children: []
   m_Father: {fileID: 5056563645380046137}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 82.243, y: 0, z: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 82, y: 0, z: 0}
 --- !u!1 &4409812552199961985
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,7 +489,6 @@ Transform:
   - {fileID: 6546923803406183846}
   - {fileID: 1462303881}
   - {fileID: 5018156402417790417}
-  - {fileID: 1366190858}
   - {fileID: 8319891684543451344}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -617,19 +616,6 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!65 &7228338618138647716
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5687978184273213291}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.046826676, y: 0.06172041, z: 1.2720556}
-  m_Center: {x: -0.008331199, y: -0.021051131, z: 0.6266082}
 --- !u!95 &1070573756721428547
 Animator:
   serializedVersion: 3

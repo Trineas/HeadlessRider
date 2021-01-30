@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "DeathTrigger")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             // things to do for game over transition
         }
 
@@ -48,12 +48,9 @@ public class PlayerController : MonoBehaviour
             knockbackDir = collision.contacts[0].normal;
         }
 
-        if(collision.gameObject.tag == "WinTrigger")
+        if(collision.gameObject.tag == "WinTrigger" && Input.GetKey(KeyCode.F))
         {
-            if (Input.GetKey(KeyCode.F))
-            {
-                print("YOU WIN");
-            }
+            print("You Win");
         }
     }
 
@@ -143,6 +140,10 @@ public class PlayerController : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(dest.y * Vector3.up);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * DampingSpeed);
+        }
+        else
+        {
+
         }
     }
     
