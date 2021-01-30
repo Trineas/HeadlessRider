@@ -121,12 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &198139526 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 198139526, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
-    type: 3}
-  m_PrefabInstance: {fileID: 1344575982978623313}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &198965108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -158,7 +152,7 @@ PrefabInstance:
         type: 3}
       propertyPath: head
       value: 
-      objectReference: {fileID: 198139526}
+      objectReference: {fileID: 1670669678}
     - target: {fileID: 8013713694063427665, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: rider
@@ -656,6 +650,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1670669678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1344575982875522496, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1344575982978623313}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1711343191
 GameObject:
   m_ObjectHideFlags: 0
