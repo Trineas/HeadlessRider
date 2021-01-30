@@ -32,7 +32,7 @@ public class MapController : MonoBehaviour
         GameplayManager p_Controller = player.GetComponent<GameplayManager>();
 
         spawnDelay = p_Controller.ScrollSpeed * 3f;
-        destroyDelay = p_Controller.ScrollSpeed * 10f;
+        destroyDelay = p_Controller.ScrollSpeed * 13f;
 
         // find track at the very front to find next spawn point
         Vector3 minSpawn = Vector3.zero;

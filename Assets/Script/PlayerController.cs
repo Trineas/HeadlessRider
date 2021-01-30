@@ -36,11 +36,12 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "DeathTrigger")
         {
-            print("oof");
+
         }
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
         {
+            GameplayManager.Instance.PlayerHit();
             isHit = true;
             isVulnerable = false;
             knockbackDir = collision.contacts[0].normal;
