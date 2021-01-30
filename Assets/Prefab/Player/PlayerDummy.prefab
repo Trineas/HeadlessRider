@@ -75,9 +75,9 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 25204c5be017a41429254aa7bbcf7960, type: 3}
   m_Controller: {fileID: 9100000, guid: fb49958033e303640bc5b8d12f248bcf, type: 2}
-  m_CullingMode: 2
+  m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -195,20 +195,19 @@ PrefabInstance:
     - target: {fileID: 1630794972795428178, guid: 25204c5be017a41429254aa7bbcf7960,
         type: 3}
       propertyPath: m_AABB.m_Center.y
-      value: -0.9214076
+      value: -0.88759613
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 25204c5be017a41429254aa7bbcf7960,
         type: 3}
       propertyPath: m_AABB.m_Extent.y
-      value: 2.1801915
+      value: 2.2449942
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 25204c5be017a41429254aa7bbcf7960,
         type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: fb49958033e303640bc5b8d12f248bcf, type: 2}
-    m_RemovedComponents:
-    - {fileID: 5866666021909216657, guid: 25204c5be017a41429254aa7bbcf7960, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25204c5be017a41429254aa7bbcf7960, type: 3}
 --- !u!4 &365218327072074026 stripped
 Transform:
