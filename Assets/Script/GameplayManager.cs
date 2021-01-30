@@ -46,7 +46,6 @@ public class GameplayManager : MonoBehaviour
         DW_pos = DarkWall.transform.position;
 
         InvisWall = GameObject.Find("BoundaryWall");
-        InvisWall.SetActive(false);
 
         delayMax = delayMin > delayMax ? delayMin + 1 : delayMax;
 
