@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.tag == "DeathTrigger")
         {
-
+            print("oof");
         }
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
@@ -145,7 +145,6 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Blink()
     {
-        print("Blinking");
         Renderer thisRend = this.GetComponent<Renderer>();
         thisRend.enabled = false;
 

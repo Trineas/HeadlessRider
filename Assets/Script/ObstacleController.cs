@@ -17,9 +17,11 @@ public class ObstacleController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-        if(collision.gameObject.tag == "DeathTrigger")
+        if (collision.gameObject.tag == "DeathTrigger")
         {
-            print("Turning off");
+            Rigidbody thisRB = GetComponent<Rigidbody>();
+            thisRB.isKinematic = true;
+
             StartCoroutine(DestoryYourself());
         }
 
