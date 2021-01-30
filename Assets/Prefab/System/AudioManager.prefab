@@ -4239,7 +4239,7 @@ MonoBehaviour:
   - {fileID: 5309947065168032069}
   - {fileID: 7745760855830894631}
   - {fileID: 5411133897917213127}
-  bgm: {fileID: 0}
+  bgm: {fileID: 8454586332660924563}
 --- !u!1 &8472807734577788336
 GameObject:
   m_ObjectHideFlags: 0

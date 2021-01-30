@@ -9,10 +9,13 @@ public class MainMenu : MonoBehaviour
 {
     public string firstLevel;
     public Image blackScreen;
-    public GameObject menuFirstButton;
+    public GameObject menuFirstButton, creditsFirstButton;
     public bool fadeToBlack, fadeFromBlack;
     public float blackScreenFadeSpeed;
     public int pauseSound, selectSound, activateSound;
+    public GameObject creditsScreen;
+    private bool creditsOpen, creditsClosed;
+    public GameObject mouseDisable;
 
     void Start()
     {
@@ -55,6 +58,36 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(firstLevel);
     }
 
+    IEnumerator CreditsCo()
+    {
+        if (creditsScreen.activeInHierarchy)
+        {
+            fadeToBlack = true;
+            yield return new WaitForSeconds(3f);
+            creditsScreen.SetActive(false);
+            yield return new WaitForSeconds(3f);
+            fadeFromBlack = true;
+
+            creditsScreen.SetActive(false);
+            mouseDisable.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(menuFirstButton);
+        }
+
+        else
+        {
+            fadeToBlack = true;
+            yield return new WaitForSeconds(3f);
+            creditsScreen.SetActive(true);
+            yield return new WaitForSeconds(3f);
+            fadeFromBlack = true;
+
+            creditsScreen.SetActive(true);
+            mouseDisable.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(creditsFirstButton);
+        }
+    }
 
     IEnumerator QuitCo()
     {
@@ -75,10 +108,14 @@ public class MainMenu : MonoBehaviour
         AudioManager.instance.PlaySFX(activateSound);
     }
 
-
     public void StartGame()
     {
         StartCoroutine(StartGameCo());
+    }
+
+    public void OpenCloseCredits()
+    {
+        StartCoroutine(CreditsCo());
     }
 
     public void QuitGame()
