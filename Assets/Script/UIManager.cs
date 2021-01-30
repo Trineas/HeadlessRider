@@ -21,6 +21,8 @@ public class UIManager : MonoBehaviour
 
     public string titleScreen;
 
+    public GameObject mouseDisable;
+
     private void Awake()
     {
         instance = this;
@@ -95,12 +97,14 @@ public class UIManager : MonoBehaviour
         if (pauseScreen.activeInHierarchy)
         {
             pauseScreen.SetActive(false);
+            mouseDisable.SetActive(false);
             Time.timeScale = 1f;
         }
 
         else
         {
             pauseScreen.SetActive(true);
+            mouseDisable.SetActive(true);
             Time.timeScale = 0f;
 
             EventSystem.current.SetSelectedGameObject(null);
