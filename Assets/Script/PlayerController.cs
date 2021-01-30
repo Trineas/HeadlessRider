@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        animKnight = GetComponent<Animator>();
+        animKnight = GameObject.Find("Body_Rigged").GetComponent<Animator>();
 
         // Get scroll speed from manager
         ScrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
