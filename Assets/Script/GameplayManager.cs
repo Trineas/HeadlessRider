@@ -8,6 +8,7 @@ public class GameplayManager : MonoBehaviour
     [Range(3,9)] public int delayMin;
     [Range(5,12)] public int delayMax;
     public List<GameObject> obstacles;
+    public List<float> diff_Parameter_DW;
 
     private float obstacleLTimer = 0f;
     private float obstacleJRTimer = 0f;
@@ -19,7 +20,9 @@ public class GameplayManager : MonoBehaviour
     private List<GameObject> obstaclesJR = new List<GameObject>();
 
     private GameObject DarkWall;
+    private GameObject InvisWall;
 
+   
 
     public static GameplayManager Instance { get; private set; }
 
@@ -28,6 +31,7 @@ public class GameplayManager : MonoBehaviour
     {
         ScrollSpeed = ScrollSpeed == 0 ? 0.3f : ScrollSpeed;
         DarkWall = GameObject.FindGameObjectWithTag("DeathTrigger");
+        InvisWall = GameObject.Find("BoundaryWall");
 
         delayMax = delayMin > delayMax ? delayMin + 1 : delayMax;
 
