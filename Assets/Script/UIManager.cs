@@ -9,9 +9,10 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
-    public Image blackScreen;
+    public Image blackScreen, eyeGlow;
     public float blackScreenFadeSpeed = 0.5f;
-    public bool fadeToBlack, fadeFromBlack;
+    public float eyeGlowFadeSpeed = 1.5f;
+    public bool fadeToBlack, fadeFromBlack, fadeToGlow, fadeFromGlow;
     public GameObject pauseScreen;
     public GameObject pauseFirstButton;
     public float distanceBetweenObjects;
@@ -50,9 +51,38 @@ public class UIManager : MonoBehaviour
             }
         }
 
+        if (fadeToGlow)
+        {
+            eyeGlow.color = new Color(eyeGlow.color.r, eyeGlow.color.g, eyeGlow.color.b, Mathf.MoveTowards(eyeGlow.color.a, 1f, eyeGlowFadeSpeed * Time.deltaTime));
+
+            if (eyeGlow.color.a == 1f)
+            {
+                fadeToGlow = false;
+            }
+        }
+
+        if (fadeFromGlow)
+        {
+            eyeGlow.color = new Color(eyeGlow.color.r, eyeGlow.color.g, eyeGlow.color.b, Mathf.MoveTowards(eyeGlow.color.a, 0f, eyeGlowFadeSpeed * Time.deltaTime));
+
+            if (eyeGlow.color.a == 0f)
+            {
+                fadeFromGlow = false;
+            }
+        }
+
         Debug.DrawLine(rider.transform.position, head.transform.position, Color.red);
         distanceBetweenObjects = Vector3.Distance(rider.transform.position, head.transform.position);
         distanceSlider.value = distanceBetweenObjects;
+
+        if (distanceSlider.value <= 10f)
+        {
+            fadeToGlow = true;
+        }
+        else if (distanceSlider.value >= 20f)
+        {
+            fadeFromGlow = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {

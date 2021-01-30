@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5928708743656956091, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7573107778545145209, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -163,6 +168,16 @@ PrefabInstance:
       propertyPath: rider
       value: 
       objectReference: {fileID: 564018822}
+    - target: {fileID: 8013713694063427665, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: eyeGlow
+      value: 
+      objectReference: {fileID: 291621876}
+    - target: {fileID: 8013713694063427665, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+        type: 3}
+      propertyPath: eyeGlowFadeSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8013713694063427669, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
         type: 3}
       propertyPath: m_Pivot.x
@@ -270,6 +285,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca0bfe8d88b0f984db0ba37e9c8a3194, type: 3}
+--- !u!114 &291621876 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5928708743656956091, guid: ca0bfe8d88b0f984db0ba37e9c8a3194,
+    type: 3}
+  m_PrefabInstance: {fileID: 198965108}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &346076425
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -997,6 +1024,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056563645789182317, guid: 17fbb5387c5d94b46accad687314f4ee,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.82
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056563645789182317, guid: 17fbb5387c5d94b46accad687314f4ee,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5687978184273213291, guid: 17fbb5387c5d94b46accad687314f4ee,
         type: 3}
