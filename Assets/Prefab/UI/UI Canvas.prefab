@@ -1284,7 +1284,7 @@ MonoBehaviour:
   blackScreen: {fileID: 8013713692224074999}
   eyeGlow: {fileID: 5928708743656956091}
   blackScreenFadeSpeed: 0.5
-  eyeGlowFadeSpeed: 1.5
+  eyeGlowFadeSpeed: 2
   fadeToBlack: 0
   fadeFromBlack: 1
   fadeToGlow: 0
