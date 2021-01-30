@@ -502,7 +502,7 @@ PrefabInstance:
     - target: {fileID: 3825874800090265973, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
       propertyPath: m_CullingMode
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3825874800090265973, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
