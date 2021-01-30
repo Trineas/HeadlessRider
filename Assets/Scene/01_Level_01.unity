@@ -1204,25 +1204,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDummy
       objectReference: {fileID: 0}
-    - target: {fileID: 8980150404066841985, guid: 0744f812db0c12c48a3c6bea17ac32bf,
-        type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8980150404066841996, guid: 0744f812db0c12c48a3c6bea17ac32bf,
-        type: 3}
-      propertyPath: JumpPower
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8980150404066841996, guid: 0744f812db0c12c48a3c6bea17ac32bf,
-        type: 3}
-      propertyPath: RecoverTime
-      value: 1.269
-      objectReference: {fileID: 0}
-    - target: {fileID: 8980150404814353342, guid: 0744f812db0c12c48a3c6bea17ac32bf,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}
