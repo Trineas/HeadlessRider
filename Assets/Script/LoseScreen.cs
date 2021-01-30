@@ -13,6 +13,7 @@ public class LoseScreen : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack, fadeToRetry, fadeToBack;
     public float blackScreenFadeSpeed;
     public Text loseText;
+    public int pauseSound, selectSound, activateSound;
 
     void Start()
     {
@@ -95,6 +96,16 @@ public class LoseScreen : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         fadeToBack = true;
+    }
+
+    public void ButtonSelected()
+    {
+        AudioManager.instance.PlaySFX(selectSound);
+    }
+
+    public void ButtonActivated()
+    {
+        AudioManager.instance.PlaySFX(activateSound);
     }
 
     public void Retry()

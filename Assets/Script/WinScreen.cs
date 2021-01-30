@@ -13,6 +13,7 @@ public class WinScreen : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack, fadeToBack;
     public float blackScreenFadeSpeed;
     public Text winText;
+    public int pauseSound, selectSound, activateSound;
 
     void Start()
     {
@@ -72,6 +73,16 @@ public class WinScreen : MonoBehaviour
         yield return new WaitForSeconds(5f);
 
         fadeToBack = true;
+    }
+
+    public void ButtonSelected()
+    {
+        AudioManager.instance.PlaySFX(selectSound);
+    }
+
+    public void ButtonActivated()
+    {
+        AudioManager.instance.PlaySFX(activateSound);
     }
 
     public void BackToMenu()

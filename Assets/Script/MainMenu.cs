@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     public GameObject menuFirstButton;
     public bool fadeToBlack, fadeFromBlack;
     public float blackScreenFadeSpeed;
+    public int pauseSound, selectSound, activateSound;
 
     void Start()
     {
@@ -62,6 +63,16 @@ public class MainMenu : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         Application.Quit();
+    }
+
+    public void ButtonSelected()
+    {
+        AudioManager.instance.PlaySFX(selectSound);
+    }
+
+    public void ButtonActivated()
+    {
+        AudioManager.instance.PlaySFX(activateSound);
     }
 
 

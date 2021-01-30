@@ -185,6 +185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8454586332994779806, guid: 32b216d05a9a55546bcf21fff62247af,
         type: 3}
+      propertyPath: bgm
+      value: 
+      objectReference: {fileID: 35703875}
+    - target: {fileID: 8454586332994779806, guid: 32b216d05a9a55546bcf21fff62247af,
+        type: 3}
       propertyPath: bgmToPlay
       value: 0
       objectReference: {fileID: 0}
@@ -195,6 +200,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32b216d05a9a55546bcf21fff62247af, type: 3}
+--- !u!82 &35703875 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8454586332676215330, guid: 32b216d05a9a55546bcf21fff62247af,
+    type: 3}
+  m_PrefabInstance: {fileID: 35703874}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &200741903
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +433,7 @@ GameObject:
   - component: {fileID: 733308647}
   - component: {fileID: 733308646}
   - component: {fileID: 733308645}
+  - component: {fileID: 733308648}
   m_Layer: 5
   m_Name: Retry Button
   m_TagString: Untagged
@@ -540,6 +552,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733308643}
   m_CullTransparentMesh: 0
+--- !u!114 &733308648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733308643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1048742113}
+          m_MethodName: ButtonActivated
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1048742113}
+          m_MethodName: ButtonSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &927989966
 GameObject:
   m_ObjectHideFlags: 0
@@ -752,6 +807,9 @@ MonoBehaviour:
   fadeToBack: 0
   blackScreenFadeSpeed: 0.5
   loseText: {fileID: 1190778836}
+  pauseSound: 14
+  selectSound: 15
+  activateSound: 13
 --- !u!1 &1099434730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1136,7 @@ GameObject:
   - component: {fileID: 1787344525}
   - component: {fileID: 1787344524}
   - component: {fileID: 1787344523}
+  - component: {fileID: 1787344526}
   m_Layer: 5
   m_Name: Back to Menu Button
   m_TagString: Untagged
@@ -1196,6 +1255,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787344521}
   m_CullTransparentMesh: 0
+--- !u!114 &1787344526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787344521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1048742113}
+          m_MethodName: ButtonActivated
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1048742113}
+          m_MethodName: ButtonSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1814171528
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,10 +18,9 @@ public class UIManager : MonoBehaviour
     public float distanceBetweenObjects;
     public GameObject rider, head;
     public Slider distanceSlider;
-
     public string mainMenu;
-
     public GameObject mouseDisable;
+    public int pauseSound, selectSound, activateSound;
 
     private void Awake()
     {
@@ -109,18 +108,31 @@ public class UIManager : MonoBehaviour
         {
             pauseScreen.SetActive(false);
             mouseDisable.SetActive(false);
+            AudioManager.instance.bgm.UnPause();
             Time.timeScale = 1f;
         }
 
         else
         {
+            AudioManager.instance.PlaySFX(pauseSound);
             pauseScreen.SetActive(true);
             mouseDisable.SetActive(true);
+            AudioManager.instance.bgm.Pause();
             Time.timeScale = 0f;
 
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(pauseFirstButton);
         }
+    }
+
+    public void ButtonSelected()
+    {
+        AudioManager.instance.PlaySFX(selectSound);
+    }
+
+    public void ButtonActivated()
+    {
+        AudioManager.instance.PlaySFX(activateSound);
     }
 
     public void Resume()
