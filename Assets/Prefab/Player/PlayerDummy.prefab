@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8980150404066841984}
   - component: {fileID: 1698538081575989776}
   - component: {fileID: 8980150404066841999}
+  - component: {fileID: 3825874800090265973}
   - component: {fileID: 8980150404066841996}
   m_Layer: 9
   m_Name: PlayerDummy
@@ -63,6 +64,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!95 &3825874800090265973
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980150404066841985}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 25204c5be017a41429254aa7bbcf7960, type: 3}
+  m_Controller: {fileID: 9100000, guid: fb49958033e303640bc5b8d12f248bcf, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8980150404066841996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,6 +186,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 25204c5be017a41429254aa7bbcf7960,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.00005888939
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 25204c5be017a41429254aa7bbcf7960,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.88759613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1630794972795428178, guid: 25204c5be017a41429254aa7bbcf7960,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 2.2449942
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 25204c5be017a41429254aa7bbcf7960,
         type: 3}

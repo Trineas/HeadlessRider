@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+
+    Animator animKnight;
+
     public float SideSpeed;
     public float DampingSpeed;
     public float JumpPower;
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
         {
+            animKnight.SetBool("isHit", true);
             isHit = true;
             isVulnerable = false;
             knockbackDir = collision.contacts[0].normal;
@@ -56,6 +59,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        animKnight = GetComponent<Animator>();
+
         // Get scroll speed from manager
         ScrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
 
@@ -70,7 +75,9 @@ public class PlayerController : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {   
+    {
+        animKnight.SetBool("Jump", Input.GetButton("Jump"));
+        animKnight.SetBool("isGrounded", IsGrounded());
         transform.position += -Vector3.forward * ScrollSpeed * 0.8f;
 
         forwardDir = Vector3.forward * Input.GetAxis("Vertical");
@@ -89,8 +96,9 @@ public class PlayerController : MonoBehaviour
     {
         if (isHit)
         {
+
             ForwardSpeed = 0f;
-            StartCoroutine(Blink());
+            //StartCoroutine(Blink());
             Physics.IgnoreLayerCollision(9, 8);
             transform.position += knockbackDir * 4f * Time.deltaTime;
             vulTimer += Time.deltaTime;
@@ -103,6 +111,8 @@ public class PlayerController : MonoBehaviour
 
             if(vulTimer >= RecoverTime)
             {
+                animKnight.SetBool("isHit", false);
+
                 Physics.IgnoreLayerCollision(9, 8, false);
                 isHit = false;
                 isVulnerable = true;
@@ -118,9 +128,9 @@ public class PlayerController : MonoBehaviour
 
     protected void Vertical()
     {
-
         if (IsGrounded())
         {
+            
             VerticalSpeed = 0f;
         }
         else
@@ -130,7 +140,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (IsGrounded() && Input.GetButton("Jump"))
-        {
+        {         
             VerticalSpeed = JumpPower;
         }
 
