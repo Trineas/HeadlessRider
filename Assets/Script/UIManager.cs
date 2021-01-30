@@ -18,10 +18,9 @@ public class UIManager : MonoBehaviour
     public float distanceBetweenObjects;
     public GameObject rider, head;
     public Slider distanceSlider;
-
-    public string titleScreen;
-
+    public string mainMenu;
     public GameObject mouseDisable;
+    public int pauseSound, selectSound, activateSound;
 
     private void Awake()
     {
@@ -92,24 +91,48 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    IEnumerator BackToMenuCo()
+    {
+        Time.timeScale = 1f;
+
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(mainMenu);
+    }
+
     public void PauseUnpause()
     {
         if (pauseScreen.activeInHierarchy)
         {
             pauseScreen.SetActive(false);
             mouseDisable.SetActive(false);
+            AudioManager.instance.bgm.UnPause();
             Time.timeScale = 1f;
         }
 
         else
         {
+            AudioManager.instance.PlaySFX(pauseSound);
             pauseScreen.SetActive(true);
             mouseDisable.SetActive(true);
+            AudioManager.instance.bgm.Pause();
             Time.timeScale = 0f;
 
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(pauseFirstButton);
         }
+    }
+
+    public void ButtonSelected()
+    {
+        AudioManager.instance.PlaySFX(selectSound);
+    }
+
+    public void ButtonActivated()
+    {
+        AudioManager.instance.PlaySFX(activateSound);
     }
 
     public void Resume()
@@ -119,7 +142,6 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(titleScreen);
-        Time.timeScale = 1f;
+        StartCoroutine(BackToMenuCo());
     }
 }

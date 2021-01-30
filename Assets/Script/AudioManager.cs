@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource[] music;
     public AudioSource[] sfx;
 
-    public int bgmToPlay;
+    public AudioSource bgm;
 
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        PlayMusic(bgmToPlay);
+        bgm.Play();
     }
 
     public void PlayMusic(int musicToPlay)

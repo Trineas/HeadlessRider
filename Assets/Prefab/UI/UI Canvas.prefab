@@ -276,9 +276,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7573107778545145209}
   m_Direction: 1
   m_MinValue: 5
-  m_MaxValue: 30
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 30
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -665,6 +665,7 @@ GameObject:
   - component: {fileID: 8013713692875547625}
   - component: {fileID: 8013713692875547624}
   - component: {fileID: 8013713692875547623}
+  - component: {fileID: 981301087}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -783,6 +784,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &981301087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013713692875547621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8013713694063427665}
+          m_MethodName: ButtonActivated
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8013713694063427665}
+          m_MethodName: ButtonSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8013713693356904897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1057,7 @@ GameObject:
   - component: {fileID: 8013713693595259928}
   - component: {fileID: 8013713693595259927}
   - component: {fileID: 8013713693595259926}
+  - component: {fileID: 397129567}
   m_Layer: 5
   m_Name: Back To Menu Button
   m_TagString: Untagged
@@ -1131,6 +1176,49 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &397129567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8013713693595259924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 15
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8013713694063427665}
+          m_MethodName: ButtonActivated
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 10
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8013713694063427665}
+          m_MethodName: ButtonSelected
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &8013713693792058829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,8 +1427,11 @@ MonoBehaviour:
   rider: {fileID: 0}
   head: {fileID: 0}
   distanceSlider: {fileID: 8611625547810390608}
-  titleScreen: 00_TitleScreen
+  mainMenu: 00_TitleScreen
   mouseDisable: {fileID: 1498214709}
+  pauseSound: 14
+  selectSound: 15
+  activateSound: 13
 --- !u!1 &8013713694084383701
 GameObject:
   m_ObjectHideFlags: 0
