@@ -276,9 +276,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 7573107778545145209}
   m_Direction: 1
   m_MinValue: 5
-  m_MaxValue: 30
+  m_MaxValue: 40
   m_WholeNumbers: 0
-  m_Value: 30
+  m_Value: 40
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   rider: {fileID: 0}
   head: {fileID: 0}
   distanceSlider: {fileID: 8611625547810390608}
-  titleScreen: 00_TitleScreen
+  mainMenu: 00_TitleScreen
   mouseDisable: {fileID: 1498214709}
 --- !u!1 &8013713694084383701
 GameObject:

@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     public GameObject rider, head;
     public Slider distanceSlider;
 
-    public string titleScreen;
+    public string mainMenu;
 
     public GameObject mouseDisable;
 
@@ -92,6 +92,17 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    IEnumerator BackToMenuCo()
+    {
+        Time.timeScale = 1f;
+
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(mainMenu);
+    }
+
     public void PauseUnpause()
     {
         if (pauseScreen.activeInHierarchy)
@@ -119,7 +130,6 @@ public class UIManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(titleScreen);
-        Time.timeScale = 1f;
+        StartCoroutine(BackToMenuCo());
     }
 }
