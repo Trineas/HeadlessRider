@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
 
     void UpdateMovement()
     {
-        transform.position += ForwardSpeed * movement * Time.deltaTime;
+        transform.position += ForwardSpeed/4f * movement * Time.deltaTime;
         transform.position += VerticalSpeed * Vector3.up * Time.deltaTime;
     }
 
