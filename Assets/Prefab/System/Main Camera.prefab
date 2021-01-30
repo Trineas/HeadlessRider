@@ -357,7 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1344575983615498019}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FinishPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1344575984050831886}
   - component: {fileID: 1344575984050831887}
   - component: {fileID: 1344575984050831884}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BoundaryWall
   m_TagString: Environment
   m_Icon: {fileID: 0}

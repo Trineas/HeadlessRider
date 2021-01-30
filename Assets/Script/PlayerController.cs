@@ -95,6 +95,13 @@ public class PlayerController : MonoBehaviour
             Physics.IgnoreLayerCollision(9, 8);
             transform.position += knockbackDir * 4f * Time.deltaTime;
             vulTimer += Time.deltaTime;
+
+            // make player move before recovery ends
+            if(vulTimer >= RecoverTime / 2f)
+            {
+                ForwardSpeed = SideSpeed;
+            }
+
             if(vulTimer >= RecoverTime)
             {
                 Physics.IgnoreLayerCollision(9, 8, false);

@@ -52,8 +52,9 @@ public class ObstacleController : MonoBehaviour
             ScrollSpeed *= 20f;
         }
 
+        // ignore layer obstacles(~8) to avoid weird positioning when spawning at the same time
         RaycastHit trackLoc;
-        if (Physics.Raycast(transform.position, Vector3.down, out trackLoc, transform.position.y + 20f))
+        if (Physics.Raycast(transform.position, Vector3.down, out trackLoc, transform.position.y + 20f, ~8))
         {
             currentTrack = trackLoc.transform.GetComponent<Renderer>();
         }
@@ -62,6 +63,7 @@ public class ObstacleController : MonoBehaviour
         float VertPos = Random.Range(-offsetSide, offsetSide);
         transform.position += Vector3.right * VertPos;
 
+        // fix lying obstacles to the ground
         if(ObstacleType == obstType.Lying)
         {
             Renderer thisObj = GetComponent<Renderer>();
