@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Danny_Test.unity
     guid: d60a6af98b127d849a5b5ceae0d51157
+  - enabled: 1
+    path: Assets/Scene/02_LoseScreen.unity
+    guid: 9481ea699aec52a489d7d2ff621e8eea
+  - enabled: 1
+    path: Assets/Scene/03_WinScreen.unity
+    guid: 13dc0f1f73fa14b47bc402e3936ae5bd
   m_configObjects: {}

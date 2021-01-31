@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     public float distanceBetweenObjects;
     public GameObject rider, head;
     public Slider distanceSlider;
-    public string mainMenu;
+    public string mainMenu, loseScreen, winScreen;
     public GameObject mouseDisable;
     public int pauseSound, selectSound, activateSound;
 
@@ -76,11 +76,11 @@ public class UIManager : MonoBehaviour
         distanceBetweenObjects = Vector3.Distance(rider.transform.position, head.transform.position);
         distanceSlider.value = distanceBetweenObjects;
 
-        if (distanceSlider.value <= 7.5f)
+        if (distanceSlider.value <= 3.5f)
         {
             fadeToGlow = true;
         }
-        else if (distanceSlider.value >= 10f)
+        else if (distanceSlider.value >= 6f)
         {
             fadeFromGlow = true;
         }
@@ -88,6 +88,16 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             PauseUnpause();
+        }
+
+        if (rider.GetComponent<PlayerController>().playerDied())
+        {
+            StartCoroutine(LoseTransitionCo());
+        }
+
+        if (rider.GetComponent<PlayerController>().playerWon())
+        {
+            StartCoroutine(WinTransitionCo());
         }
     }
 
@@ -100,6 +110,24 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(mainMenu);
+    }
+
+    IEnumerator LoseTransitionCo()
+    {
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(loseScreen);
+    }
+
+    IEnumerator WinTransitionCo()
+    {
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(winScreen);
     }
 
     public void PauseUnpause()
