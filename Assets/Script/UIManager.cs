@@ -76,11 +76,11 @@ public class UIManager : MonoBehaviour
         distanceBetweenObjects = Vector3.Distance(rider.transform.position, head.transform.position);
         distanceSlider.value = distanceBetweenObjects;
 
-        if (distanceSlider.value <= 7.5f)
+        if (distanceSlider.value <= 3.5f)
         {
             fadeToGlow = true;
         }
-        else if (distanceSlider.value >= 10f)
+        else if (distanceSlider.value >= 6f)
         {
             fadeFromGlow = true;
         }
