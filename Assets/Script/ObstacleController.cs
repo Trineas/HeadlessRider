@@ -27,6 +27,7 @@ public class ObstacleController : MonoBehaviour
 
         if(ObstacleType == obstType.Jumping && collision.gameObject.tag == "RunTrack")
         {
+            AudioManager.instance.PlaySFX(Random.Range(0, 2));
             JumpPower = BouncePower;
         }
 
@@ -101,12 +102,6 @@ public class ObstacleController : MonoBehaviour
         {
             // sheep sound
             AudioManager.instance.PlaySFX(Random.Range(18, 21));
-        }
-
-        if (ObstacleType == obstType.Lying)
-        {
-            // tree stump sound
-            AudioManager.instance.PlaySFX(Random.Range(4, 7));
         }
     }
 }
