@@ -5,13 +5,13 @@ using UnityEngine;
 public class PlayerController_Test : MonoBehaviour
 {
 
-    public Animator animKnight;
+    Animator animKnight;
 
     public float SideSpeed;
     public float DampingSpeed;
     public float JumpPower;
     [Range(0, 1)] public float Gravity;
-    [Range(0.8f, 2f)] public float RecoverTime = 0.8f;
+    [Range(0.8f, 2f)] public float RecoverTime;
 
     private float ScrollSpeed;
 
@@ -34,7 +34,7 @@ public class PlayerController_Test : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(GetComponent<Collider>().transform.position, Vector3.down, distToGround + 0.01f);
+        return Physics.Raycast(GetComponent<Collider>().transform.position, Vector3.down, distToGround + 0.01f, ~(1 << 8));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -63,6 +63,11 @@ public class PlayerController_Test : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        if(GetComponent<Rigidbody>().centerOfMass != Vector3.zero)
+        {
+            GetComponent<Rigidbody>().centerOfMass = Vector3.zero;
+        }
+
         animKnight = GameObject.Find("Body_Rigged").GetComponent<Animator>();
 
         // Get scroll speed from manager
@@ -80,6 +85,7 @@ public class PlayerController_Test : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * (distToGround + 0.1f), Color.red);
 
         animKnight.SetBool("Jump", Input.GetButton("Jump"));
         animKnight.SetBool("isGrounded", IsGrounded());
@@ -133,13 +139,8 @@ public class PlayerController_Test : MonoBehaviour
 
     protected void Vertical()
     {
-        if (IsGrounded())
+        if (!IsGrounded())
         {
-            VerticalSpeed = 0f;
-        }
-        else
-        {
-            // player is falling
             VerticalSpeed -= Gravity;
         }
 

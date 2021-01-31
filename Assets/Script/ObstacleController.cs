@@ -41,6 +41,7 @@ public class ObstacleController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        playSound();
         ScrollSpeed = GameObject.Find("GameplayManager").GetComponent<GameplayManager>().ScrollSpeed;
 
         //decide Spawn point
@@ -54,7 +55,7 @@ public class ObstacleController : MonoBehaviour
 
         // ignore layer obstacles(~8) to avoid weird positioning when spawning at the same time
         RaycastHit trackLoc;
-        if (Physics.Raycast(transform.position, Vector3.down, out trackLoc, transform.position.y + 20f, ~8))
+        if (Physics.Raycast(transform.position, Vector3.down, out trackLoc, transform.position.y + 20f, ~(1 << 8)))
         {
             currentTrack = trackLoc.transform.GetComponent<Renderer>();
         }
@@ -86,5 +87,10 @@ public class ObstacleController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         Destroy(gameObject);
+    }
+
+    void playSound()
+    {
+
     }
 }

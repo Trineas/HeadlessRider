@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(GetComponent<Collider>().transform.position, Vector3.down, distToGround + 0.01f);
+        return Physics.Raycast(GetComponent<Collider>().transform.position, Vector3.down, distToGround + 0.01f, ~(1<<8));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * (distToGround + 0.1f), Color.red);
 
         animKnight.SetBool("Jump", Input.GetButton("Jump"));
         animKnight.SetBool("isGrounded", IsGrounded());
@@ -133,14 +134,13 @@ public class PlayerController : MonoBehaviour
 
     protected void Vertical()
     {
+        // player is falling
+        VerticalSpeed -= Gravity;
+
         if (IsGrounded())
         {
             VerticalSpeed = 0f;
-        }
-        else
-        {
-            // player is falling
-            VerticalSpeed -= Gravity;
+
         }
 
         if (IsGrounded() && Input.GetButton("Jump"))
