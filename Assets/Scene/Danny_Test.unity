@@ -338,6 +338,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1053633138023286392, guid: 0391b0110505bfe4db7d29082c1919d0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: cd5fdefb73e556749acee2fb25110cab, type: 2}
+    - target: {fileID: 2313913197536793075, guid: 0391b0110505bfe4db7d29082c1919d0,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f64606d40a04ea443b93b319949a88a4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0391b0110505bfe4db7d29082c1919d0, type: 3}
 --- !u!4 &346076426 stripped
@@ -392,6 +402,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4009c0064ab731a4b9c764c2c092772e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!21 &844025092
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/OutlinePlus
+  m_Shader: {fileID: 4800000, guid: f0e778543e4d8a34295b7995426495da, type: 3}
+  m_ShaderKeywords: OUTLINE_USE_DEPTH
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1001 &867330781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -459,6 +494,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Track 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7425819200083378248, guid: 81ecc662a41a0634eb05e4b90a7125eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be7d59cd3c9a350429827edb0da0d1c7, type: 2}
+    - target: {fileID: 7564738599581362796, guid: 81ecc662a41a0634eb05e4b90a7125eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be7d59cd3c9a350429827edb0da0d1c7, type: 2}
+    - target: {fileID: 7577624501348267017, guid: 81ecc662a41a0634eb05e4b90a7125eb,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: be7d59cd3c9a350429827edb0da0d1c7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81ecc662a41a0634eb05e4b90a7125eb, type: 3}
 --- !u!4 &867330782 stripped
@@ -656,6 +706,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1560757106
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hidden/OutlinePlus
+  m_Shader: {fileID: 4800000, guid: f0e778543e4d8a34295b7995426495da, type: 3}
+  m_ShaderKeywords: OUTLINE_USE_DEPTH
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats: []
+    m_Colors: []
 --- !u!1 &1711343191
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,6 +888,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157975448695394269, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
+        type: 3}
+      propertyPath: material
+      value: 
+      objectReference: {fileID: 1560757106}
     - target: {fileID: 1344575982966149827, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
         type: 3}
       propertyPath: m_RootOrder
@@ -872,6 +952,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Main Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 1588417707779267249, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ffd73b2d8354a4ead9a12fbb96a2cd, type: 3}
@@ -1109,6 +1194,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8978877658687092768, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 8980150404066841984, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
       propertyPath: m_RootOrder
@@ -1127,7 +1217,7 @@ PrefabInstance:
     - target: {fileID: 8980150404066841984, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 8980150404066841984, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
@@ -1168,6 +1258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105363064206846242, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}
