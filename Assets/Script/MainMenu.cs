@@ -63,9 +63,9 @@ public class MainMenu : MonoBehaviour
         if (creditsScreen.activeInHierarchy)
         {
             fadeToBlack = true;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
             creditsScreen.SetActive(false);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
             fadeFromBlack = true;
 
             creditsScreen.SetActive(false);
@@ -77,9 +77,9 @@ public class MainMenu : MonoBehaviour
         else
         {
             fadeToBlack = true;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
             creditsScreen.SetActive(true);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1.5f);
             fadeFromBlack = true;
 
             creditsScreen.SetActive(true);

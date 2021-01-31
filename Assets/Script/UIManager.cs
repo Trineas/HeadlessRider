@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     public float distanceBetweenObjects;
     public GameObject rider, head;
     public Slider distanceSlider;
-    public string mainMenu;
+    public string mainMenu, loseScreen, winScreen;
     public GameObject mouseDisable;
     public int pauseSound, selectSound, activateSound;
 
@@ -89,6 +89,16 @@ public class UIManager : MonoBehaviour
         {
             PauseUnpause();
         }
+
+        if (rider.GetComponent<PlayerController>().playerDied())
+        {
+            StartCoroutine(LoseTransitionCo());
+        }
+
+        if (rider.GetComponent<PlayerController>().playerWon())
+        {
+            StartCoroutine(WinTransitionCo());
+        }
     }
 
     IEnumerator BackToMenuCo()
@@ -100,6 +110,24 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
 
         SceneManager.LoadScene(mainMenu);
+    }
+
+    IEnumerator LoseTransitionCo()
+    {
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(loseScreen);
+    }
+
+    IEnumerator WinTransitionCo()
+    {
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(winScreen);
     }
 
     public void PauseUnpause()
