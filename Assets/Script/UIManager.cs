@@ -30,11 +30,6 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void Start()
-    {
-        AudioManager.instance.PlaySFX(3);
-    }
-
     void Update()
     {
         if (fadeToBlack)
@@ -141,6 +136,7 @@ public class UIManager : MonoBehaviour
         {
             pauseScreen.SetActive(false);
             mouseDisable.SetActive(false);
+            AudioManager.instance.wagon.UnPause();
             AudioManager.instance.bgm.UnPause();
             Time.timeScale = 1f;
         }
@@ -150,6 +146,7 @@ public class UIManager : MonoBehaviour
             AudioManager.instance.PlaySFX(pauseSound);
             pauseScreen.SetActive(true);
             mouseDisable.SetActive(true);
+            AudioManager.instance.wagon.Pause();
             AudioManager.instance.bgm.Pause();
             Time.timeScale = 0f;
 

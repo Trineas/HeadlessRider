@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack;
     public float blackScreenFadeSpeed;
     public int pauseSound, selectSound, activateSound;
-    public GameObject creditsScreen;
+    public GameObject creditsScreen, controlsScreen;
     private bool creditsOpen, creditsClosed;
     public GameObject mouseDisable;
 
@@ -51,6 +51,15 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator StartGameCo()
     {
+        fadeToBlack = true;
+
+        yield return new WaitForSeconds(3f);
+        controlsScreen.SetActive(true);
+
+        fadeFromBlack = true;
+
+        yield return new WaitForSeconds(5f);
+
         fadeToBlack = true;
 
         yield return new WaitForSeconds(3f);

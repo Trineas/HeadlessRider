@@ -190,6 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 35703875}
     - target: {fileID: 8454586332994779806, guid: 32b216d05a9a55546bcf21fff62247af,
         type: 3}
+      propertyPath: wagon
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454586332994779806, guid: 32b216d05a9a55546bcf21fff62247af,
+        type: 3}
       propertyPath: bgmToPlay
       value: 2
       objectReference: {fileID: 0}
