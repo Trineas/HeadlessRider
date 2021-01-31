@@ -47,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
         {
+            playHitSound(collision);
             animKnight.SetBool("isHit", true);
             isHit = true;
             isVulnerable = false;
@@ -191,6 +192,19 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(0.1f);
         bodyRend.enabled = true;
+    }
+
+    void playHitSound(Collision collision)
+    {
+        if (collision.gameObject.tag.Contains("Lying") || collision.gameObject.tag.Contains("Rolling"))
+        {
+            AudioManager.instance.PlaySFX(8);
+        }
+
+        if (collision.gameObject.tag.Contains("Jumping"))
+        {
+            AudioManager.instance.PlaySFX(Random.Range(22, 23));
+        }
     }
 
     public bool playerDied()

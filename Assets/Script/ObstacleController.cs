@@ -91,6 +91,22 @@ public class ObstacleController : MonoBehaviour
 
     void playSound()
     {
+        if(ObstacleType == obstType.Rolling)
+        {
+            // barrel sound
+            AudioManager.instance.PlaySFX(Random.Range(9, 11));
+        }
 
+        if (ObstacleType == obstType.Jumping)
+        {
+            // sheep sound
+            AudioManager.instance.PlaySFX(Random.Range(18, 21));
+        }
+
+        if (ObstacleType == obstType.Lying)
+        {
+            // tree stump sound
+            AudioManager.instance.PlaySFX(Random.Range(4, 7));
+        }
     }
 }
