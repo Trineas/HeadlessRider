@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController_Test : MonoBehaviour
 {
 
-    Animator animKnight;
+    public Animator animKnight;
 
     public float SideSpeed;
     public float DampingSpeed;
     public float JumpPower;
     [Range(0, 1)] public float Gravity;
-    [Range(0.8f, 2f)] public float RecoverTime;
+    [Range(0.8f, 2f)] public float RecoverTime = 0.8f;
 
     private float ScrollSpeed;
 
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float vulTimer = 0f;
 
     private bool winGame = false;
-    private bool hasDied = false; 
+    private bool hasDied = false;
 
     bool IsGrounded()
     {
@@ -39,13 +39,13 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "DeathTrigger")
+        if (collision.gameObject.tag == "DeathTrigger")
         {
             gameObject.SetActive(false);
             hasDied = true;
         }
 
-        if(isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
+        if (isVulnerable && collision.gameObject.tag.Contains("Obstacle"))
         {
             animKnight.SetBool("isHit", true);
             isHit = true;
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
             knockbackDir = collision.contacts[0].normal;
         }
 
-        if(collision.gameObject.tag == "WinTrigger")
+        if (collision.gameObject.tag == "WinTrigger")
         {
             isVulnerable = false;
             winGame = true;
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         transform.position += -Vector3.forward * ScrollSpeed * 0.8f;
 
         forwardDir = Vector3.forward * Input.GetAxis("Vertical");
-        rightDir  = Vector3.right * Input.GetAxis("Horizontal");
+        rightDir = Vector3.right * Input.GetAxis("Horizontal");
 
         movement = forwardDir + rightDir;
 
@@ -109,12 +109,12 @@ public class PlayerController : MonoBehaviour
             vulTimer += Time.deltaTime;
 
             // make player move before recovery ends
-            if(vulTimer >= RecoverTime / 2f)
+            if (vulTimer >= RecoverTime / 2f)
             {
                 ForwardSpeed = SideSpeed;
             }
 
-            if(vulTimer >= RecoverTime)
+            if (vulTimer >= RecoverTime)
             {
                 animKnight.SetBool("isHit", false);
 
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (IsGrounded() && Input.GetButton("Jump"))
-        {         
+        {
             VerticalSpeed = JumpPower;
         }
 
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * DampingSpeed);
         }
     }
-    
+
 
     void UpdateMovement()
     {
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
         transform.position += Vector3.right * ForwardSpeed * movement.x * Time.deltaTime;
 
         // forward and backward movements are slowed
-        transform.position += Vector3.forward * ForwardSpeed/3f * movement.z * Time.deltaTime;
+        transform.position += Vector3.forward * ForwardSpeed / 3f * movement.z * Time.deltaTime;
 
         // Jump Height
         transform.position += VerticalSpeed * Vector3.up * Time.deltaTime;

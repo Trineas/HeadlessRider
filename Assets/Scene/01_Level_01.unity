@@ -499,6 +499,16 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.y
       value: 2.1801915
       objectReference: {fileID: 0}
+    - target: {fileID: 1698538081575989776, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.15482993
+      objectReference: {fileID: 0}
+    - target: {fileID: 1698538081575989776, guid: 0744f812db0c12c48a3c6bea17ac32bf,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5164035
+      objectReference: {fileID: 0}
     - target: {fileID: 3825874800090265973, guid: 0744f812db0c12c48a3c6bea17ac32bf,
         type: 3}
       propertyPath: m_CullingMode
@@ -574,7 +584,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerDummy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3825874800090265973, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0744f812db0c12c48a3c6bea17ac32bf, type: 3}
 --- !u!4 &1020438851 stripped
 Transform:

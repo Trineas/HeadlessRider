@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8980150404066841999}
   - component: {fileID: 8980150404066841996}
   m_Layer: 9
-  m_Name: PlayerDummy
+  m_Name: PlayerDummy_Test
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1372783, y: 3.7823584, z: 0.8260634}
-  m_Center: {x: 0, y: 0.8541238, z: 0.03399833}
+  m_Size: {x: 1.1372783, y: 3.7529528, z: 0.8260634}
+  m_Center: {x: 0, y: 0.8688266, z: 0.03399833}
 --- !u!54 &8980150404066841999
 Rigidbody:
   m_ObjectHideFlags: 0
