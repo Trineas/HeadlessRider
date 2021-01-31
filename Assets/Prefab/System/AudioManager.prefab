@@ -2424,7 +2424,7 @@ GameObject:
   - component: {fileID: 3117111880772821994}
   - component: {fileID: 7651537285054454617}
   m_Layer: 0
-  m_Name: Headhunt_Chase_Theme_VERY_RAW
+  m_Name: Headhunt_Chase_Theme
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2454,7 +2454,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9c7940c9016095c4689fcb9be8226e85, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 40b0a8675b420fc4ab0cee2125e1d8a4, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3640,7 +3640,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

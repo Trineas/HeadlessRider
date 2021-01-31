@@ -30,6 +30,11 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    private void Start()
+    {
+        AudioManager.instance.PlaySFX(3);
+    }
+
     void Update()
     {
         if (fadeToBlack)
